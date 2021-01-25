@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/bash
 
 #users
 COLORLIGHT_USER=colorlight
