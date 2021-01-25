@@ -1,0 +1,14 @@
+#configuration for you apps
+#应用通用配置
+_address=
+_port=80
+_open_ssl=false
+_port_websocket=8443
+
+#docker services image version
+#docker镜像版本配置
+_one_app=unismart
+_one_nginx=unismart3
+_one_redis=unismart2
+_one_ws=unismart
+_one_mysql=unismart
