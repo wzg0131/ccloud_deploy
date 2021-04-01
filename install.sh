@@ -151,6 +151,7 @@ update_images_version()
     _one_redis_tag=`cat config | grep -m 1 _one_redis | awk -F= '{print $2}'`
     _one_ws_tag=`cat config | grep -m 1 _one_ws | awk -F= '{print $2}'`
     _one_mysql_tag=`cat config | grep -m 1 _one_mysql | awk -F= '{print $2}'`
+    _one_video_tag=`cat config | grep -m 1 _one_video | awk -F= '{print $2}'`
 
     _port=`cat config | grep -m 1 _port | awk -F= '{print $2}'`
     _port_websocket=`cat config | grep _port_websocket | awk -F= '{print $2}'`
@@ -160,6 +161,7 @@ update_images_version()
         -e "s| colorlightwzg/one-nginx:TAG| colorlightwzg/one-nginx:${_one_nginx_tag}| g" \
         -e "s| colorlightwzg/one-ws:TAG| colorlightwzg/one-ws:${_one_ws_tag}| g" \
         -e "s| colorlightwzg/one-redis:TAG| colorlightwzg/one-redis:${_one_redis_tag}| g" \
+        -e "s| colorlightwzg/one-video:TAG| colorlightwzg/one-video:${_one_video_tag}| g" \
         -e "s| - PORT_80:80| - ${_port}:80| g" \
         -e "s| - PORT_WS:8443| - ${_port_websocket}:8443| g" \
         ${TEMPLATE_DIR}/docker-compose.yml.template > ${OUTPUT_DIR}/docker-compose.yml
@@ -204,7 +206,7 @@ fi
 
 if [ -n "$_need_to_init" ]; then
     init_mysql_data "colorlightwzg/one-mysql:${_one_mysql_tag}" "$MYSQL_DATABASE_DATA_VOLUME"
-    sleep 150
+    sleep 300
     #todo 可以加个探测
     after_init_mysql_data
 fi

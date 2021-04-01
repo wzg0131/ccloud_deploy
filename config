@@ -12,3 +12,4 @@ _one_nginx=v2.5.6-210120-250
 _one_redis=v1.210114-16
 _one_ws=v2.4
 _one_mysql=v210106-18
+_one_video=v20210317

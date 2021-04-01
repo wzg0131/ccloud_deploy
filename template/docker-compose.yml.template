@@ -109,6 +109,25 @@ services:
       options:
         max-size: "5m"
         max-file: "10"
+  one-video:
+    image: colorlightwzg/one-video:TAG
+    container_name: one-video
+    volumes:
+      - spring_uploads_data:/usr/share/nginx/html/backup/wp-content/uploads
+      - video_service_tmp:/tmp
+      - ./video:/var/lib/video_service
+    networks:
+      one-nw:
+        ipv4_address: 172.109.0.9
+    depends_on:
+      - one-zk
+      - one-app
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "5"
   one-nginx:
     privileged: true
     image: colorlightwzg/one-nginx:TAG

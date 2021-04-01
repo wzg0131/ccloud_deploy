@@ -9,14 +9,14 @@ ccloud deploy project
 (1) 私钥命名 `privkey.pem`
 (2) 公钥命名 `fullchain.pem`
   
-###2 执行部署脚本 [`sh install.sh [可选安装目录]`](install.sh)
+###2 执行部署脚本 [`bash install.sh [可选安装目录]`](install.sh)
 
-###3 卸载 [`sh uninstall.sh [安装的目录]`](uninstall.sh)
+###3 卸载 [`bash uninstall.sh [安装的目录]`](uninstall.sh)
 
 ##离线安装
 
 ###1 在指定目录放入Docker镜像的离线tar包，也可以放在默认目录[pkg](pkg)。
 
-###2 执行[load.sh](load.sh)脚本
+###2 执行[load.sh](load.sh)脚本: `bash load.sh [放镜像的文件夹]`
 
-###3 执行部署脚本 [`sh install.sh [可选安装目录]`](install.sh)
+###3 执行部署脚本 [`bash install.sh [可选安装目录]`](install.sh)
