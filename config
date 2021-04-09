@@ -7,8 +7,8 @@ _port_websocket=8443
 
 #docker services image version
 #docker镜像版本配置
-_one_app=v5.1.210121-790
-_one_nginx=v2.5.6-210120-250
-_one_redis=v1.210114-16
+_one_app=v210401
+_one_nginx=v210326
+_one_redis=v1.210312-19
 _one_ws=v2.4
-_one_mysql=v210106-18
+_one_mysql=v8.0.22-210401
